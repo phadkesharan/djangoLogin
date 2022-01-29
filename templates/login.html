@@ -5,12 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
+    <title>Login Page</title>
 </head>
 
 <body>
-    <h1>Welcome to My Hospital!</h1>
-
     {% if messages %}
     <ul class="messages">
         {% for message in messages %}
@@ -19,17 +17,15 @@
     </ul>
     {% endif %}
 
-    <h2>SigUp Now!!</h2>
-    <form action="signUpRedirect" method="post">
+    <h1>Login</h1>
+    <h6>Username</h6>
+    <form action="login" method="post">
         {% csrf_token %}
-        <h4>Choose Type of User</h4>
-        <input type="radio" name="User" value="Doctor"> Doctor
-        <input type="radio" name="User" value="Patient"> Patient
-        <button type="submit">Goto SignUp</button>
+        <input type="text" name="username" placeholder="username">
+        <h6>Password</h6>
+        <input type="password" name="password"><br>
+        <button type="submit">Login</button>
     </form>
-
-    <h2>Already a User? Login</h2>
-    <a href="login">Login</a>
+    
 </body>
-
 </html>

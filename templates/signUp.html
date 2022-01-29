@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp Page</title>
+</head>
+
+<body>
+   
+    <h1> {{ typeOfUser }} SignUp</h1>
+
+    <form action="signUp" method="post">
+        {% csrf_token %}
+        <h6>Name</h6>
+        <input type="text" placeholder="First Name" name="fname" autocomplete="off"><br>
+        <input type="text" placeholder="Last Name" name="lname" autocomplete="off"><br>
+        <h6>Profile Picture</h6>
+        <input type="file" name="dp" accept=".png, .jpeg, .jpg"><br>
+        <h6>Username</h6>
+        <input type="text" placeholder="username" name="username" autocomplete="off"><br>
+        <h6>Email</h6>
+        <input type="email" placeholder="username" name="email" autocomplete="off"><br>
+        <h6>Address</h6>
+        <textarea name="address" cols="30" rows="10" placeholder="address"></textarea>
+        <h6>Password</h6>
+        <input type="password" placeholder="password" name="password" autocomplete="off"><br>
+        <input type="password" placeholder="confirm password" name="confirm" autocomplete="off"><br>
+
+        <input type="hidden" name="type" value="{{typeOfUser}}">
+        <button type="submit">SignUp</button>
+
+    </form>
+
+</body>
+
+</html>
